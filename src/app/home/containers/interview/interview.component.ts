@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { DbService } from '../../../shared/services/db.service'
+import User from '../../../shared/models/user.model';
 
 @Component({
   selector: 'app-interview',
@@ -8,6 +9,8 @@ import { DbService } from '../../../shared/services/db.service'
   styleUrls: ['./interview.component.scss']
 })
 export class InterviewComponent implements OnInit {
+  public selectGroup: string
+  public userMajorListForSearch: any
   public userMajorList: any
   public interviewGroup$: Observable<any>
 
@@ -15,12 +18,11 @@ export class InterviewComponent implements OnInit {
     private dbService: DbService
   ) { }
 
-  ngOnInit () {
-    const a = new Observable<any>()
-    
+  async ngOnInit () {
     this.interviewGroup$ = this.dbService.getInterviewGroup()
-    // this.interviewGroup$
-    //   .subscribe(res => console.log(res))
+    this.selectGroup = 'CT'
+    this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ct
+    this.userMajorList = (await this.interviewGroup$.toPromise()).ct
   }
 
   async selectMajor (major) {
@@ -34,6 +36,10 @@ export class InterviewComponent implements OnInit {
       case 'PG':
         return this.userMajorList = (await this.interviewGroup$.toPromise()).pg
     }
+  }
+
+  onSearchUsers (users: User[]) {
+    this.userMajorList = users
   }
 
 }

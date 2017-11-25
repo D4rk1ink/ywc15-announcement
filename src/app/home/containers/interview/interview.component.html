@@ -12,9 +12,12 @@
     WEB PROGRAMING
   </mc-card>
 </div>
-
+<div class="seach">
+  <mc-search [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>
+</div>
 <div class="user-list">
-  <div class="user-item" *ngFor="let user of userMajorList">
+  <!-- <div class="user-item" *ngFor="let user of userMajorList">
     {{ user.firstName }} {{ user.lastName }}
-  </div>
+  </div> -->
+  <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
 </div>
