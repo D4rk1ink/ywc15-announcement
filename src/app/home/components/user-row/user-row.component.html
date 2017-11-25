@@ -1,6 +1,7 @@
 <div class="wrapper">
   <div class="">{{ user.firstName }} {{ user.lastName }}</div>
-  <div class="">
+  <div class="icon-menu">
     <i class="fa fa-facebook" aria-hidden="true" ceiboShare  [facebook]="{u: repoUrl}"></i>
+    <i class="material-icons" routerLink="/{{ user.interviewRef.slice(0, 2).toLowerCase() }}/{{ user.interviewRef }}">forward</i>
   </div>
 </div>
