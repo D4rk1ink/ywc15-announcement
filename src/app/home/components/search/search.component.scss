@@ -1,4 +1,11 @@
+@import 'src/app/shared/styles/color.style';
+
 .search-input {
-    height: 32px;
+    height: 40px;
     width: 100%;
+    font-size: 1.5em;
+    color: $black;
+    border: 1px solid $light-gray2;
+    border-radius: 3px;
+    padding: 0 1rem;
 }

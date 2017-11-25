@@ -1,3 +1,7 @@
 <div class="wrapper">
-  <input type="text" class="search-input" [ngModel]="searchText" (ngModelChange)="onSearchChange($event)" />
+  <input type="text"
+    class="search-input"
+    placeholder="Search {{ placeholderText }}"
+    [(ngModel)]="searchText"
+    (ngModelChange)="onSearchChange($event)" />
 </div>
