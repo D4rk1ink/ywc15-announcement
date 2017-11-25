@@ -1,0 +1,7 @@
+@import 'src/shared/styles/color/style';
+
+.wrapper {
+    border-radius: 4px;
+    border: 1px solid $bright-gray;
+    box-shadow: 0 0 2px 3px $light-gray4;
+}
