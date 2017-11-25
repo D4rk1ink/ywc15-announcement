@@ -1,7 +1,13 @@
 @import 'src/app/shared/styles/color.style';
 
 .wrapper {
-    border-radius: 4px;
+    border-radius: 3px;
     border: 1px solid $bright-gray;
-    box-shadow: 0 0 2px 3px $light-gray4;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    transition: 0.3s;
+    padding: 2rem;
+}
+
+.wrapper:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
 }

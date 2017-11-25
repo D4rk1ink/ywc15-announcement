@@ -1,0 +1,6 @@
+.major-group {
+    display: flex;
+    mc-card:not(:last-child) {
+        padding-right: 1rem;
+    }
+}
