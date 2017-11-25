@@ -1,23 +1,30 @@
-<div class="major-group">
-  <mc-card class="md-25" (click)="selectMajor('CT')">
-    WEB CONTENT
-  </mc-card>
-  <mc-card class="md-25" (click)="selectMajor('DS')">
-    WEB DESIGN
-  </mc-card>
-  <mc-card class="md-25" (click)="selectMajor('MK')">
-    WEB MAKETING
-  </mc-card>
-  <mc-card class="md-25" (click)="selectMajor('PG')">
-    WEB PROGRAMING
-  </mc-card>
-</div>
-<div class="seach">
-  <mc-search [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>
-</div>
-<div class="user-list">
-  <!-- <div class="user-item" *ngFor="let user of userMajorList">
-    {{ user.firstName }} {{ user.lastName }}
-  </div> -->
-  <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
+<div class="wrapper">
+  <section class="major-group">
+    <mc-card class="md-25" 
+      (click)="onSelectMajor('CT')"
+      [img]="'/assets/images/img-ct.jpg'"
+      [title]="'Web Content'"
+      [amount]="(this.interviewGroup$ | async).ct.length"></mc-card>
+    <mc-card class="md-25" 
+      (click)="onSelectMajor('DS')"
+      [img]="'/assets/images/img-ds.jpg'"
+      [title]="'Web Design'"
+      [amount]="(this.interviewGroup$ | async).ds.length"></mc-card>
+    <mc-card class="md-25" 
+      (click)="onSelectMajor('MK')"
+      [img]="'/assets/images/img-mk.jpg'"
+      [title]="'Web Marketing'"
+      [amount]="(this.interviewGroup$ | async).mk.length"></mc-card>
+    <mc-card class="md-25" 
+      (click)="onSelectMajor('PG')"
+      [img]="'/assets/images/img-pg.jpg'"
+      [title]="'Web Programming'"
+      [amount]="(this.interviewGroup$ | async).pg.length"></mc-card>
+  </section>
+  <section class="search">
+    <mc-search [major]="selectMajor" [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>
+  </section>
+  <section class="user-list">
+    <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
+  </section>
 </div>

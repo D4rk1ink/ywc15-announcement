@@ -9,7 +9,7 @@ import User from '../../../shared/models/user.model';
   styleUrls: ['./interview.component.scss']
 })
 export class InterviewComponent implements OnInit {
-  public selectGroup: string
+  public selectMajor: string
   public userMajorListForSearch: any
   public userMajorList: any
   public interviewGroup$: Observable<any>
@@ -20,21 +20,22 @@ export class InterviewComponent implements OnInit {
 
   async ngOnInit () {
     this.interviewGroup$ = this.dbService.getInterviewGroup()
-    this.selectGroup = 'CT'
+    this.selectMajor = 'CT'
     this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ct
     this.userMajorList = (await this.interviewGroup$.toPromise()).ct
   }
 
-  async selectMajor (major) {
+  async onSelectMajor (major) {
+    this.selectMajor = major
     switch (major) {
       case 'CT':
-        return this.userMajorList = (await this.interviewGroup$.toPromise()).ct
+        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ct
       case 'DS':
-        return this.userMajorList = (await this.interviewGroup$.toPromise()).ds
+        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ds
       case 'MK':
-        return this.userMajorList = (await this.interviewGroup$.toPromise()).mk
+        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).mk
       case 'PG':
-        return this.userMajorList = (await this.interviewGroup$.toPromise()).pg
+        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).pg
     }
   }
 
