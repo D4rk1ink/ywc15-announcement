@@ -1,3 +1,6 @@
+<div class="gamble-model" *ngIf="isGamble">
+  <mc-gamble (close)="onCloseGamble($event)" [users]="userMajorList"></mc-gamble>
+</div>
 <div class="wrapper">
   <section class="major-group">
     <mc-card class="md-25" 
@@ -21,10 +24,20 @@
       [title]="'Web Programming'"
       [amount]="interviewGroup?.pg.length"></mc-card>
   </section>
-  <section class="search">
-    <mc-search [major]="selectMajor" [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>
-  </section>
-  <section class="user-list">
-    <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
+  <section class="list-section">
+    <section class="lucky-user">
+        <div class="img">
+          <img src="/assets/images/dice.png" class="pointer" (click)="onOpenGamble()"/>
+        </div>
+        <div class="title">
+          เกมส์สุ่มผู้โชคดี
+        </div>
+    </section>
+    <section class="search">
+      <mc-search [major]="selectMajor" [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>
+    </section>
+    <section class="user-list">
+      <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
+    </section>
   </section>
 </div>

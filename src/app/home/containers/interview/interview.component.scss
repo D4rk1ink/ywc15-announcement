@@ -1,14 +1,44 @@
+@import 'src/app/shared/styles/color.style';
+
 .wrapper {
-    padding: 0 1rem;
+    // padding: 0 1rem;
+}
+
+.gamble-model {
+    background-color: rgba(#000000, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999;
 }
 
 .major-group {
+    padding: 0 1rem;
     display: flex;
     margin-bottom: 2rem;
     mc-card:not(:last-child) {
         padding-right: 1rem;
     }
 }
+
+.lucky-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+    > div {
+        justify-content: center;
+        display: flex;    
+    }
+}
+
 .search {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+.list-section {
+    padding: 0 1rem;
+    padding-top: 2rem;
+    box-shadow: 0 -4px 8px 0 rgba($light-gray2, .5);
+    border-top: 1px solid rgba($light-gray2, .5);
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { DbService } from '../../../shared/services/db.service'
-import User from '../../../shared/models/user.model';
+import { Overlay } from 'ngx-modialog'
+import User from '../../../shared/models/user.model'
 
 @Component({
   selector: 'app-interview',
@@ -14,6 +15,7 @@ export class InterviewComponent implements OnInit {
   public userMajorList: any
   public interviewGroup$: Observable<any>
   public interviewGroup: any
+  public isGamble: boolean = false
   constructor (
     private dbService: DbService
   ) {
@@ -46,6 +48,14 @@ export class InterviewComponent implements OnInit {
 
   onSearchUsers (users: User[]) {
     this.userMajorList = users
+  }
+
+  onOpenGamble () {
+    this.isGamble = true
+  }
+
+  onCloseGamble (value) {
+    this.isGamble = false
   }
 
 }
