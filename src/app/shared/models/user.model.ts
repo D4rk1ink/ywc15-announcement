@@ -3,4 +3,6 @@ export default class User {
     lastName: string
     major: string
     interviewRef: string
+    score: number
+    key: number
 }
