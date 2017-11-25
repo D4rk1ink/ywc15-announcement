@@ -3,11 +3,35 @@
 .wrapper {
     border-radius: 3px;
     border: 1px solid $bright-gray;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px 0 rgba($light-gray2, .5);
     transition: 0.3s;
-    padding: 2rem;
+    border-radius: 3px;
+    overflow: hidden;
+    .img {
+        height: 170px;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    .title {
+        font-size: 2em;
+        color: $brown;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .detail {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($light-gray, .2);
+        border-top: 1px solid $light-gray;
+    }
 }
 
 .wrapper:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px 0 rgba($light-gray2, .3);
 }
