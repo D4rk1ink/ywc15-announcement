@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
-import { Subscriber } from 'rxjs/Subscriber'
 import { InterviewService } from './shared/services/interview.service'
 import { DbService } from './shared/services/db.service'
 import filterMajor from './shared/utils/filter-major.util'
