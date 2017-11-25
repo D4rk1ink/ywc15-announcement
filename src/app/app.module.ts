@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module'
 import { SharedModule } from './shared/shared.module'
 import { HttpClientModule } from '@angular/common/http'
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireAuthModule } from 'angularfire2/auth'
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'
 
 import { environment } from 'environments/environment'
 
@@ -19,6 +20,8 @@ var firebaseConfig = {
   messagingSenderId: environment.messagingSenderId,
 };
 
+console.log(firebaseConfig)
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +29,8 @@ var firebaseConfig = {
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),  // Add this
-    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     HttpClientModule,
     SharedModule,
     AppRoutingModule

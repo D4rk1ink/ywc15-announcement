@@ -13,29 +13,34 @@ export class InterviewComponent implements OnInit {
   public userMajorListForSearch: any
   public userMajorList: any
   public interviewGroup$: Observable<any>
-
+  public interviewGroup: any
   constructor (
     private dbService: DbService
-  ) { }
+  ) {
+    
+  }
 
   async ngOnInit () {
-    this.interviewGroup$ = this.dbService.getInterviewGroup()
     this.selectMajor = 'CT'
-    this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ct
-    this.userMajorList = (await this.interviewGroup$.toPromise()).ct
+    this.interviewGroup$ = this.dbService.getInterviewGroup()
+    this.interviewGroup$.subscribe(interviewGroup => {
+      this.interviewGroup = interviewGroup
+      this.userMajorListForSearch = interviewGroup[this.selectMajor.toLowerCase()]
+      this.userMajorList = interviewGroup[this.selectMajor.toLowerCase()]
+    })
   }
 
   async onSelectMajor (major) {
     this.selectMajor = major
     switch (major) {
       case 'CT':
-        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ct
+        return this.userMajorListForSearch = this.interviewGroup.ct
       case 'DS':
-        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).ds
+        return this.userMajorListForSearch = this.interviewGroup.ds
       case 'MK':
-        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).mk
+        return this.userMajorListForSearch = this.interviewGroup.mk
       case 'PG':
-        return this.userMajorListForSearch = (await this.interviewGroup$.toPromise()).pg
+        return this.userMajorListForSearch = this.interviewGroup.pg
     }
   }
 

@@ -4,22 +4,22 @@
       (click)="onSelectMajor('CT')"
       [img]="'/assets/images/img-ct.jpg'"
       [title]="'Web Content'"
-      [amount]="(this.interviewGroup$ | async).ct.length"></mc-card>
+      [amount]="interviewGroup?.ct.length"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('DS')"
       [img]="'/assets/images/img-ds.jpg'"
       [title]="'Web Design'"
-      [amount]="(this.interviewGroup$ | async).ds.length"></mc-card>
+      [amount]="interviewGroup?.ds.length"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('MK')"
       [img]="'/assets/images/img-mk.jpg'"
       [title]="'Web Marketing'"
-      [amount]="(this.interviewGroup$ | async).mk.length"></mc-card>
+      [amount]="interviewGroup?.mk.length"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('PG')"
       [img]="'/assets/images/img-pg.jpg'"
       [title]="'Web Programming'"
-      [amount]="(this.interviewGroup$ | async).pg.length"></mc-card>
+      [amount]="interviewGroup?.pg.length"></mc-card>
   </section>
   <section class="search">
     <mc-search [major]="selectMajor" [users]="userMajorListForSearch" (search)="onSearchUsers($event)"></mc-search>

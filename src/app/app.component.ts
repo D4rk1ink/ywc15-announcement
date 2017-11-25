@@ -17,15 +17,15 @@ export class AppComponent {
     private interviewService: InterviewService
   ) {
     if (!this.dbService.getInterviewGroup()) {
-      this.interviewService.queryInterview()
-        .then((res: any[]) => {
-          let data = new Observable<any>(observer => {
+      let data = new Observable<any>(observer => {
+        this.interviewService.queryInterview()
+          .subscribe((res: any[]) => {
             observer.next(filterMajor(res))
-            observer.complete()
+            // observer.complete()
           })
-          this.dbService.saveToInterviewGroup(data)
-          this.isLoading = false
-        })
+      })
+      this.dbService.saveToInterviewGroup(data)
+      this.isLoading = false
     }
   }
 }
