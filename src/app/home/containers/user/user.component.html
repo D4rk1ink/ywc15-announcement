@@ -1,3 +1,12 @@
-<p>
-  user works!
-</p>
+<section *ngIf="user">
+  <div class="title">
+    <div>ขอแสดงความยินดี</div>
+  </div>
+  <div class="img">
+    <img src="/assets/images/icon-{{ user?.interviewRef.slice(0, 2).toLowerCase() }}.png" />
+  </div>
+  <div class="detail">
+      <div>คุณ {{ user?.firstName }} {{ user?.lastName }}</div>
+      <div>ได้ผ่านเข้ารอบผู้มีสิทธิ์เข้าสัมภาษณ์ในสาขา web {{ user?.major }}</div>
+  </div>
+</section>
