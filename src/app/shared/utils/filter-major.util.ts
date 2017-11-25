@@ -7,7 +7,9 @@ export default (interview: any[]) => {
         mk: [],
         pg: []
     }
-    interview.forEach((user: User) => {
+    interview.forEach((user: User, index) => {
+        user.key = index
+        user.score = user.score || 0
         switch (user.interviewRef.slice(0, 2)) {
             case 'CT':
                 interviewGroups.ct.push(user)
