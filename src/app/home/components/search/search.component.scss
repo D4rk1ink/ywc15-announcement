@@ -1,11 +1,22 @@
 @import 'src/app/shared/styles/color.style';
 
+.wrapper {
+    position: relative;
+}
+
 .search-input {
     height: 40px;
     width: 100%;
     font-size: 1.5em;
-    color: $black;
+    color: rgba($black, .7);
     border: 1px solid $light-gray2;
     border-radius: 3px;
     padding: 0 1rem;
+}
+
+i {
+    color: $dark-gray;
+    position: absolute;
+    right: 16px;
+    top: 9px;
 }
