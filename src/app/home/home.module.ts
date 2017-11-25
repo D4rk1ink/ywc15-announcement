@@ -8,7 +8,8 @@ import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
 import { UserRowComponent } from './components/user-row/user-row.component';
 
-import { CeiboShare } from 'ng2-social-share'
+import { CeiboShare } from 'ng2-social-share';
+import { UserComponent } from './containers/user/user.component'
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { CeiboShare } from 'ng2-social-share'
     InterviewComponent,
     CardComponent,
     SearchComponent,
-    UserRowComponent
+    UserRowComponent,
+    UserComponent
   ],
   exports: [
     InterviewComponent
