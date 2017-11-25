@@ -1,13 +1,48 @@
 @import 'src/app/shared/styles/color.style';
 
 .wrapper {
-    padding: 5px 10px;
+    padding: 10px;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
+    border-radius: 3px;
+    background-color: $white;
+    transition: background-color .2s;
+    border: 1px solid $bright-gray;
+    margin-bottom: 10px;
+    transition: 0.2s;
+    box-shadow: 0 2px 8px 0 rgba($light-gray2, .2);
+}
+
+.wrapper:hover {
+    box-shadow: 0 6px 16px 0 rgba($light-gray2, .2);
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.icon-major {
+    height: 30px;
+    img {
+        height: 100%;
+    }
+}
+
+.name {
+    color: $brown;
 }
 
 .icon-menu {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    i {
+        padding-left: 1rem;
+    }
+    .twitter {
+        color: $twitter
+    }
+    .facebook {
+        color: $facebook
+    }
 }

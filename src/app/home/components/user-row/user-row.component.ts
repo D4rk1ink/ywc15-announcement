@@ -10,11 +10,13 @@ export class UserRowComponent implements OnInit {
 
   @Input('user') user: User
 
-  public repoUrl = 'https://github.com/Epotignano/ng2-social-share'
-  public imageUrl = 'https://avatars2.githubusercontent.com/u/10674541?v=3&s=200'
+  public shareUrl = ''
   constructor() { }
 
   ngOnInit() {
+    const userId = this.user.interviewRef
+    const majorId = userId.slice(0, 2)
+    this.shareUrl = `http://${location.host}/${majorId}/${userId}`
   }
 
 }

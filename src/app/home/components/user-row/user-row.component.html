@@ -1,7 +1,14 @@
 <div class="wrapper">
-  <div class="">{{ user.firstName }} {{ user.lastName }}</div>
-  <div class="icon-menu">
-    <i class="fa fa-facebook" aria-hidden="true" ceiboShare  [facebook]="{u: repoUrl}"></i>
-    <i class="material-icons" routerLink="/{{ user.interviewRef.slice(0, 2).toLowerCase() }}/{{ user.interviewRef }}">forward</i>
+  <div class="icon-major md-10">
+    <img src="/assets/images/icon-{{ user.interviewRef.slice(0, 2).toLowerCase() }}.png" />
+  </div>
+  <div class="name md-40">{{ user.firstName }} {{ user.lastName }}</div>
+  <div class="score md-30">
+
+  </div>
+  <div class="icon-menu md-20">
+    <i class="fa fa-twitter twitter" aria-hidden="true" ceiboShare  [twitter]="{url: shareUrl}"></i>
+    <i class="fa fa-facebook facebook" aria-hidden="true" ceiboShare  [facebook]="{u: shareUrl}"></i>
+    <i class="material-icons view" routerLink="/{{ user.interviewRef.slice(0, 2).toLowerCase() }}/{{ user.interviewRef }}">forward</i>
   </div>
 </div>
