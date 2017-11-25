@@ -1,14 +1,20 @@
 <div class="major-group">
-  <mc-card class="md-25">
+  <mc-card class="md-25" (click)="selectMajor('CT')">
     WEB CONTENT
   </mc-card>
-  <mc-card class="md-25">
+  <mc-card class="md-25" (click)="selectMajor('DS')">
     WEB DESIGN
   </mc-card>
-  <mc-card class="md-25">
+  <mc-card class="md-25" (click)="selectMajor('MK')">
     WEB MAKETING
   </mc-card>
-  <mc-card class="md-25">
+  <mc-card class="md-25" (click)="selectMajor('PG')">
     WEB PROGRAMING
   </mc-card>
+</div>
+
+<div class="user-list">
+  <div class="user-item" *ngFor="let user of userMajorList">
+    {{ user.firstName }} {{ user.lastName }}
+  </div>
 </div>

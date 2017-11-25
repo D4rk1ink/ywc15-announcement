@@ -1,6 +1,6 @@
 import User from '../../shared/models/user.model'
 
-export default (interview: Array<any>) => {
+export default (interview: any[]) => {
     const interviewGroups = {
         ct: [],
         ds: [],
@@ -8,7 +8,7 @@ export default (interview: Array<any>) => {
         pg: []
     }
     interview.forEach((user: User) => {
-        switch (user.interviewRef) {
+        switch (user.interviewRef.slice(0, 2)) {
             case 'CT':
                 interviewGroups.ct.push(user)
                 break
