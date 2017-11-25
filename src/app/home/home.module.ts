@@ -7,10 +7,10 @@ import { InterviewComponent } from './containers/interview/interview.component';
 import { CardComponent } from './components/card/card.component';
 import { SearchComponent } from './components/search/search.component';
 import { UserRowComponent } from './components/user-row/user-row.component';
+import { GambleComponent } from './components/gamble/gamble.component'
 
 import { CeiboShare } from 'ng2-social-share';
 import { UserComponent } from './containers/user/user.component';
-import { GambleComponent } from './components/gamble/gamble.component'
 
 @NgModule({
   imports: [
@@ -28,9 +28,6 @@ import { GambleComponent } from './components/gamble/gamble.component'
     UserRowComponent,
     UserComponent,
     GambleComponent
-  ],
-  exports: [
-    InterviewComponent
   ]
 })
 export class HomeModule { }

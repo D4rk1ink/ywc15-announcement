@@ -17,9 +17,10 @@ export class InterviewService {
 
   queryInterview (): Observable<any> {
     return this.fb.list('/').valueChanges()
-    
-      // const endpointAPI = this.baseAPI + '/interview'
-      // return this.http.get(endpointAPI).toPromise()
+  }
+
+  addScore (key, score) {
+    this.fb.list(`/${key}`).set('score', score)
   }
 
 }

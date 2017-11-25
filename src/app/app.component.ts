@@ -21,7 +21,6 @@ export class AppComponent {
         this.interviewService.queryInterview()
           .subscribe((res: any[]) => {
             observer.next(filterMajor(res))
-            // observer.complete()
           })
       })
       this.dbService.saveToInterviewGroup(data)

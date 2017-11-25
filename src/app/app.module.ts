@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { AngularFireAuthModule } from 'angularfire2/auth'
+import { MetaModule } from 'ng2-meta'
 
 import { AppComponent } from './app.component'
 
@@ -19,8 +20,6 @@ var firebaseConfig = {
   storageBucket: environment.storageBucket,
   messagingSenderId: environment.messagingSenderId,
 };
-
-console.log(firebaseConfig)
 
 @NgModule({
   declarations: [
