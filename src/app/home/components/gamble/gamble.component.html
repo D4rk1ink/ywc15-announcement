@@ -1,3 +1,17 @@
-<p>
-  gamble works!
-</p>
+<div class="out">
+  <div class="wrapper">
+    <i *ngIf="isComplete" class="close material-icons" (click)="onClose()">close</i>
+    <div class="title">
+      เกมส์สุ่มผูโชคดี
+    </div>
+    <div class="img">
+      <img src="/assets/images/dice.png" />
+    </div>
+    <div class="name">
+      {{ currentUser?.firstName }} {{ currentUser?.lastName }}    
+    </div>
+    <div *ngIf="isComplete" class="score">
+      คะแนนโชคดี +1
+    </div>
+  </div>
+</div>
