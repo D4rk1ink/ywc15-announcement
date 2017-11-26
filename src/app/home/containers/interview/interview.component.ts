@@ -7,7 +7,7 @@ import User from '../../../shared/models/user.model'
 @Component({
   selector: 'app-interview',
   templateUrl: './interview.component.html',
-  styleUrls: ['./interview.component.scss']
+  styleUrls: ['./interview.component.scss'],
 })
 export class InterviewComponent implements OnInit {
   public selectMajor: string
