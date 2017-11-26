@@ -1,3 +1,8 @@
 <div *ngIf="!isLoading">
-  <router-outlet></router-outlet>
+  <div class="header">
+      <span routerLink="/" class="pointer">YWC Announcement</span>
+  </div>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 </div>

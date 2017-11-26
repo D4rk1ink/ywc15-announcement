@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router'
 import { DbService } from '../../../shared/services/db.service'
 import { Meta } from '@angular/platform-browser'
+import { Title } from '@angular/platform-browser'
 import User from '../../../shared/models/user.model'
 
 @Component({
@@ -13,6 +14,7 @@ export class UserComponent implements OnInit {
   public user: User
   constructor (
     private metaService: Meta,
+    private titleService: Title,
     private dbService: DbService,
     private router: Router,
     private activatedRoute: ActivatedRoute
@@ -34,6 +36,7 @@ export class UserComponent implements OnInit {
         this.user = await interviewGroup[majorId].find((user: User) => {
           return user.interviewRef === userId
         })
+        this.titleService.setTitle(`คุณ ${this.user.firstName} ได้ผ่านเข้ารอบสัมภาษณ์`)
         this.metaService.addTag({ property: 'og:title', content: `คุณ ${this.user.firstName} ได้ผ่านเข้ารอบสัมภาษณ์` })
         this.metaService.addTag({ property: 'og:image', content: `/assets/imges/icon-${majorId}.png`});
       }

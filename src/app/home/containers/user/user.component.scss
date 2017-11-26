@@ -1,3 +1,9 @@
+@import 'src/app/shared/styles/color.style';
+
+.wrapper {
+    padding-top: 7rem;
+}
+
 .title,
 .detail {
     text-align: center;
@@ -12,4 +18,17 @@
     margin: 1rem 0;
     display: flex;
     justify-content: center;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 1rem;
+    border-top: 1px solid $bright-gray;
+    box-shadow: 0 -2px 8px 0 rgba($light-gray2, .2);
 }

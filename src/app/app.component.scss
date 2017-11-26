@@ -1,0 +1,29 @@
+@import 'src/app/shared/styles/color.style';
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $bright-gray;
+    box-shadow: 0 2px 8px 0 rgba($light-gray2, .2);
+    text-align: center;
+}
+
+.content {
+    display: block;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 1rem;
+    border-top: 1px solid $bright-gray;
+    box-shadow: 0 -2px 8px 0 rgba($light-gray2, .2);
+}

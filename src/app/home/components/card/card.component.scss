@@ -37,6 +37,8 @@
     }
 }
 
+.wrapper.active,
 .wrapper:hover {
-    box-shadow: 0 8px 16px 0 rgba($light-gray2, .3);
+    border: 1px solid rgba($bright-blue, .6);
+    box-shadow: 0 8px 16px 0 rgba($bright-blue, .3);
 }

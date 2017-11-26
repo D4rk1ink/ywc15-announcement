@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { DbService } from '../../../shared/services/db.service'
-import { Overlay } from 'ngx-modialog'
+import { Title } from '@angular/platform-browser';
 import User from '../../../shared/models/user.model'
 
 @Component({
@@ -17,12 +17,14 @@ export class InterviewComponent implements OnInit {
   public interviewGroup: any
   public isGamble: boolean = false
   constructor (
+    private titleService: Title,
     private dbService: DbService
   ) {
     
   }
 
   async ngOnInit () {
+    this.titleService.setTitle('YWC Announcement')
     this.selectMajor = 'CT'
     this.interviewGroup$ = this.dbService.getInterviewGroup()
     this.interviewGroup$.subscribe(interviewGroup => {

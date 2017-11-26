@@ -21,6 +21,8 @@ var firebaseConfig = {
   messagingSenderId: environment.messagingSenderId,
 };
 
+console.log(firebaseConfig)
+
 @NgModule({
   declarations: [
     AppComponent

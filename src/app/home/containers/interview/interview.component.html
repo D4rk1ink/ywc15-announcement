@@ -7,22 +7,26 @@
       (click)="onSelectMajor('CT')"
       [img]="'/assets/images/img-ct.jpg'"
       [title]="'Web Content'"
-      [amount]="interviewGroup?.ct.length"></mc-card>
+      [amount]="interviewGroup?.ct.length"
+      [active]="selectMajor == 'CT'"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('DS')"
       [img]="'/assets/images/img-ds.jpg'"
       [title]="'Web Design'"
-      [amount]="interviewGroup?.ds.length"></mc-card>
+      [amount]="interviewGroup?.ds.length"
+      [active]="selectMajor == 'DS'"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('MK')"
       [img]="'/assets/images/img-mk.jpg'"
       [title]="'Web Marketing'"
-      [amount]="interviewGroup?.mk.length"></mc-card>
+      [amount]="interviewGroup?.mk.length"
+      [active]="selectMajor == 'MK'"></mc-card>
     <mc-card class="md-25" 
       (click)="onSelectMajor('PG')"
       [img]="'/assets/images/img-pg.jpg'"
       [title]="'Web Programming'"
-      [amount]="interviewGroup?.pg.length"></mc-card>
+      [amount]="interviewGroup?.pg.length"
+      [active]="selectMajor == 'PG'"></mc-card>
   </section>
   <section class="list-section">
     <section class="lucky-user">
@@ -40,4 +44,7 @@
       <mc-user *ngFor="let user of userMajorList" [user]="user"></mc-user>
     </section>
   </section>
+</div>
+<div class="footer">
+  Power by passakorn@darklink
 </div>

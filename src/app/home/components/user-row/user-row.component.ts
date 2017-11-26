@@ -18,7 +18,7 @@ export class UserRowComponent implements OnInit {
   ngOnInit () {
     const userId = this.user.interviewRef
     const majorId = userId.slice(0, 2)
-    this.shareUrl = `http://${location.host}/${majorId}/${userId}`
+    this.shareUrl = `${location.host}/${majorId}/${userId}`
   }
 
   addScore () {

@@ -42,3 +42,15 @@
     box-shadow: 0 -4px 8px 0 rgba($light-gray2, .5);
     border-top: 1px solid rgba($light-gray2, .5);
 }
+
+.footer {
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    margin-top: 1rem;
+    border-top: 1px solid $bright-gray;
+    box-shadow: 0 -2px 8px 0 rgba($light-gray2, .2);
+}

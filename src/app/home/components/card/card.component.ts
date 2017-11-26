@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input('active') active: boolean
   @Input('img') img: string
   @Input('title') title: string
   @Input('amount') amount: string
